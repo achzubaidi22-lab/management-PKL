@@ -131,9 +131,11 @@
         <h1 class="text-2xl font-black tracking-tight text-slate-900">SIM-PKL SMEKNERO</h1>
         <p class="text-sm font-bold text-indigo-600 mt-1 tracking-wide">Mendidik Sepenuh Hati</p>
         <div class="inline-flex items-center gap-1.5 px-3 py-1 mt-2 rounded-full text-xs font-bold text-amber-700 bg-amber-50 border border-amber-300 shadow-sm badge-berkilau">
-       
-         
-        
+          <span>✨</span>
+          <span>SMEKNERO Berkilau</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2.5 font-medium">SMK Negeri 1 Robatal Sampang &bull; Sistem Monitoring & Absensi Wajah PKL</p>
+      </div>
 
       <form id="formLogin" onsubmit="handleLoginSubmit(event)" class="space-y-4">
         <div>
@@ -173,15 +175,15 @@
         <div class="grid grid-cols-3 gap-2">
           <button type="button" onclick="fillDemoLogin('admin', 'admin123')"
             class="py-2 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-medium transition text-center">
-            Admin
+            👑 Admin
           </button>
           <button type="button" onclick="fillDemoLogin('pembimbing', 'guru123')"
             class="py-2 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-medium transition text-center">
-            Pembimbing
+            👨‍🏫 Pembimbing
           </button>
           <button type="button" onclick="fillDemoLogin('siswa', 'siswa123')"
             class="py-2 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-medium transition text-center">
-            Siswa
+            🎓 Siswa
           </button>
         </div>
       </div>
@@ -208,7 +210,9 @@
           <div class="flex flex-col">
             <div class="flex items-center gap-2 flex-wrap">
               <h1 class="text-base sm:text-lg font-extrabold tracking-tight leading-tight text-white">SIM-PKL SMEKNERO</h1>
-              
+              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-300 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded-full badge-berkilau">
+                ✨ SMEKNERO Berkilau
+              </span>
             </div>
             <p class="text-xs font-semibold text-indigo-200 tracking-wide mt-0.5">Mendidik Sepenuh Hati</p>
           </div>
@@ -265,7 +269,9 @@
         </div>
         <div class="pt-4 border-t border-slate-800 text-center space-y-1.5">
           <p class="text-xs font-semibold text-indigo-200">Mendidik Sepenuh Hati</p>
-         
+          <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-300 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded-full badge-berkilau">
+            ✨ SMEKNERO Berkilau
+          </span>
           <p class="text-[10px] text-slate-500 pt-1">SMK Negeri 1 Robatal Sampang &copy; 2026</p>
         </div>
       </div>
@@ -423,24 +429,30 @@
       <!-- ================================================================== -->
       <section id="viewAbsensiWajah" class="hidden space-y-6 max-w-2xl mx-auto">
         <div class="text-center">
-          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Absensi Siswa</h2>
-          <p class="text-xs sm:text-sm text-slate-500 mt-1">Gunakan kamera HP untuk absensi masuk & pulang.</p>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Absensi Wajah Biometrik</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Gunakan kamera HP atau Laptop untuk absensi masuk & pulang otomatis.</p>
         </div>
 
-        <div class="bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm flex">
+        <div class="bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm flex gap-1">
           <button type="button" id="btnModeMasuk" onclick="setAbsensiMode('masuk')"
-            class="flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-sm">
+            class="flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-1.5 bg-indigo-600 text-white shadow-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
             <span>Absen Masuk</span>
           </button>
           <button type="button" id="btnModePulang" onclick="setAbsensiMode('pulang')"
-            class="flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900">
+            class="flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-1.5 text-slate-600 hover:text-slate-900">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
             <span>Absen Pulang</span>
           </button>
+          <button type="button" id="btnModeIzin" onclick="setAbsensiMode('izin')"
+            class="flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-1.5 text-slate-600 hover:text-slate-900">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span>Ajukan Izin / Sakit</span>
+          </button>
         </div>
 
-        <div class="bg-slate-900 rounded-3xl p-4 sm:p-6 shadow-xl border border-slate-800 text-white relative overflow-hidden flex flex-col items-center">
+        <!-- Box 1: Kamera Absensi Masuk/Pulang -->
+        <div id="boxKameraAbsensi" class="bg-slate-900 rounded-3xl p-4 sm:p-6 shadow-xl border border-slate-800 text-white relative overflow-hidden flex flex-col items-center">
           <div id="gpsStatusPill" class="mb-3 px-3.5 py-1.5 rounded-full bg-slate-800 text-slate-300 text-[11px] font-medium flex items-center gap-2 border border-slate-700">
             <svg class="w-3.5 h-3.5 text-indigo-400 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
             <span id="gpsStatusText">Mendeteksi lokasi GPS Anda...</span>
@@ -478,6 +490,90 @@
               <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               <span>Daftarkan / Kalibrasi Template Wajah</span>
             </button>
+          </div>
+        </div>
+
+        <!-- Box 2: Form Pengajuan Izin / Sakit & Riwayat Siswa -->
+        <div id="boxPengajuanIzin" class="hidden space-y-6">
+          <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-xl border border-slate-200">
+            <div class="flex items-center gap-2 pb-3 border-b border-slate-100 mb-4">
+              <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900">Form Pengajuan Izin / Sakit</h3>
+                <p class="text-xs text-slate-500">Unggah bukti surat resmi untuk diverifikasi oleh Guru Pembimbing Anda.</p>
+              </div>
+            </div>
+
+            <form id="formPengajuanIzinSiswa" onsubmit="handleSavePengajuanIzin(event)" class="space-y-4 text-xs">
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1.5">Jenis Keterangan Berhalangan Hadir *</label>
+                <div class="grid grid-cols-2 gap-3">
+                  <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-indigo-400 transition">
+                    <input type="radio" name="inputJenisIzin" value="Sakit" checked class="text-indigo-600 focus:ring-indigo-500">
+                    <div>
+                      <span class="font-bold text-slate-900 block text-xs">Sakit</span>
+                      <span class="text-[10px] text-slate-500">Surat Dokter / Puskesmas</span>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-indigo-400 transition">
+                    <input type="radio" name="inputJenisIzin" value="Izin" class="text-indigo-600 focus:ring-indigo-500">
+                    <div>
+                      <span class="font-bold text-slate-900 block text-xs">Izin</span>
+                      <span class="text-[10px] text-slate-500">Surat Izin Orang Tua</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Tanggal Mulai Izin / Sakit *</label>
+                  <input type="date" id="izinInputTglMulai" required class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800">
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Tanggal Selesai Izin / Sakit *</label>
+                  <input type="date" id="izinInputTglSelesai" required class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800">
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Alasan / Penjelasan Rinci *</label>
+                <textarea id="izinInputAlasan" rows="3" required placeholder="Jelaskan alasan izin Anda atau keluhan sakit secara rinci..."
+                  class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800"></textarea>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Unggah Foto Bukti Fisik (Surat Dokter / Surat Izin Ortu) *</label>
+                <div class="flex items-center gap-2 mb-2">
+                  <input type="file" id="izinInputFotoFile" accept="image/*" required onchange="previewIzinFile(event)" class="w-full text-[11px] text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                </div>
+
+                <div id="izinPhotoPreviewBox" class="hidden relative rounded-xl overflow-hidden border border-slate-200 max-h-48 bg-slate-100 flex items-center justify-center">
+                  <img id="izinPreviewImg" src="" alt="Pratinjau Surat" class="max-h-48 w-auto object-contain">
+                  <button type="button" onclick="clearIzinPhoto()" class="absolute top-2 right-2 p-1 bg-rose-600 text-white rounded-full text-xs shadow">✕</button>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-slate-100 flex items-center justify-end">
+                <button type="submit" id="btnSubmitPengajuanIzin" class="w-full sm:w-auto px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl text-xs shadow-md transition flex items-center justify-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                  <span>Kirim Permohonan ke Pembimbing</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Riwayat Pengajuan Izin Siswa -->
+          <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-xl border border-slate-200">
+            <h4 class="font-bold text-slate-900 text-sm mb-3 flex items-center gap-2">
+              <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Riwayat Pengajuan Izin / Sakit Anda</span>
+            </h4>
+            <div id="listRiwayatIzinSiswa" class="space-y-3">
+              <p class="text-slate-400 text-xs italic text-center py-6">Belum ada permohonan izin/sakit yang diajukan.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -660,6 +756,17 @@
           </div>
 
           <div class="flex flex-wrap items-center gap-2 text-xs flex-1 justify-start md:justify-end">
+            <!-- Opsi Basis Hari Kerja (5 / 6 / 7 Hari) -->
+            <div class="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-2.5 py-1.5 rounded-xl">
+              <span class="text-slate-500 font-medium text-[11px]">Basis Hari:</span>
+              <select id="selectBasisHariKerja" onchange="loadRekapData()" class="bg-transparent font-bold text-indigo-700 text-xs focus:outline-none cursor-pointer">
+                <option value="auto">Sesuai Aturan Mitra</option>
+                <option value="6">Pasti 6 Hari (Senin-Sabtu)</option>
+                <option value="7">Pasti 7 Hari (Penuh)</option>
+                <option value="5">5 Hari (Senin-Jumat)</option>
+              </select>
+            </div>
+
             <!-- Parameter Tanggal Harian -->
             <div id="filterHarianBox" class="flex items-center gap-1.5">
               <span class="text-slate-500 font-medium">Tanggal:</span>
@@ -753,6 +860,153 @@
         </div>
       </section>
 
+
+      <!-- ================================================================== -->
+      <!-- VIEW 6B: ABSENSI & LOG KUNJUNGAN MONITORING PEMBIMBING              -->
+      <!-- ================================================================== -->
+      <section id="viewMonitoring" class="hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Monitoring & Supervisi Guru Pembimbing</h2>
+            <p class="text-xs sm:text-sm text-slate-500">Catat kunjungan supervisi ke perusahaan mitra lengkap dengan verifikasi GPS & foto bukti.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="openModalMonitoring()" class="inline-flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 active:scale-[0.99] text-white rounded-xl text-xs font-semibold shadow-sm transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              <span>+ Absen Kunjungan Monitoring</span>
+            </button>
+            <button onclick="exportMonitoringToExcel()" class="inline-flex items-center gap-1.5 px-3 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-xl text-xs font-semibold shadow-sm transition">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span>Export Laporan Excel</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Metric Stat Cards Monitoring -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded-2xl border border-slate-200/90 shadow-sm flex items-center gap-3">
+            <div class="p-3 bg-indigo-50 text-indigo-600 rounded-xl">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-medium">Total Kunjungan</p>
+              <h3 id="statTotalMonitoring" class="text-xl font-bold text-slate-900">0</h3>
+            </div>
+          </div>
+          <div class="bg-white p-4 rounded-2xl border border-slate-200/90 shadow-sm flex items-center gap-3">
+            <div class="p-3 bg-emerald-50 text-emerald-600 rounded-xl">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-medium">Mitra Terkunjungi</p>
+              <h3 id="statMitraMonitoring" class="text-xl font-bold text-slate-900">0</h3>
+            </div>
+          </div>
+          <div class="bg-white p-4 rounded-2xl border border-slate-200/90 shadow-sm flex items-center gap-3">
+            <div class="p-3 bg-amber-50 text-amber-600 rounded-xl">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-medium">Validasi Lokasi GPS</p>
+              <h3 id="statGpsValidMonitoring" class="text-xl font-bold text-slate-900">0 Valid</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabel Log Kunjungan Monitoring -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <div class="p-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <span class="text-xs font-bold text-slate-800">Daftar Riwayat Kunjungan Monitoring Pembimbing</span>
+            <div class="flex items-center gap-2">
+              <select id="filterMonitoringPembimbing" onchange="renderMonitoringTable()" class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800">
+                <option value="">Semua Guru Pembimbing</option>
+              </select>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse fluid-table text-xs">
+              <thead>
+                <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
+                  <th class="py-3 px-4">Tanggal & Jam</th>
+                  <th class="py-3 px-3">Guru Pembimbing</th>
+                  <th class="py-3 px-3">Mitra Dikunjungi</th>
+                  <th class="py-3 px-3">Verifikasi GPS Lokasi</th>
+                  <th class="py-3 px-3">Catatan Supervisi</th>
+                  <th class="py-3 px-4 text-center">Foto Bukti</th>
+                </tr>
+              </thead>
+              <tbody id="tableMonitoringBody" class="divide-y divide-slate-100"></tbody>
+            </table>
+          </div>
+          <div id="tableMonitoringEmpty" class="py-12 text-center text-slate-400 text-xs italic">
+            Belum ada catatan kunjungan monitoring pembimbing.
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================== -->
+      <!-- VIEW 6C: VERIFIKASI IZIN & SAKIT SISWA (PEMBIMBING & ADMIN)        -->
+      <!-- ================================================================== -->
+      <section id="viewVerifikasiIzin" class="hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Verifikasi Izin & Sakit Siswa</h2>
+            <p class="text-xs sm:text-sm text-slate-500">Tinjau permohonan ketidakhadiran siswa binaan, periksa foto surat dokter / surat orang tua, dan beri persetujuan.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <select id="filterStatusIzinSelect" onchange="renderPengajuanIzinTable()" class="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-700">
+              <option value="">Semua Status</option>
+              <option value="Menunggu" selected>Menunggu Review</option>
+              <option value="Disetujui">Sudah Disetujui</option>
+              <option value="Ditolak">Ditolak (Alpa)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Metric Stat Cards Izin -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="bg-white p-3.5 rounded-2xl border border-slate-200 text-center">
+            <span class="text-[10px] uppercase font-bold text-slate-400">Total Pengajuan</span>
+            <p id="statTotalIzin" class="text-xl font-bold text-slate-900">0</p>
+          </div>
+          <div class="bg-white p-3.5 rounded-2xl border border-amber-200 bg-amber-50/40 text-center">
+            <span class="text-[10px] uppercase font-bold text-amber-700">Menunggu Review</span>
+            <p id="statMenungguIzin" class="text-xl font-bold text-amber-600">0</p>
+          </div>
+          <div class="bg-white p-3.5 rounded-2xl border border-emerald-200 bg-emerald-50/40 text-center">
+            <span class="text-[10px] uppercase font-bold text-emerald-700">Disetujui</span>
+            <p id="statDisetujuiIzin" class="text-xl font-bold text-emerald-600">0</p>
+          </div>
+          <div class="bg-white p-3.5 rounded-2xl border border-rose-200 bg-rose-50/40 text-center">
+            <span class="text-[10px] uppercase font-bold text-rose-700">Ditolak (Alpa)</span>
+            <p id="statDitolakIzin" class="text-xl font-bold text-rose-600">0</p>
+          </div>
+        </div>
+
+        <!-- Tabel Daftar Permohonan Izin -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse fluid-table text-xs">
+              <thead>
+                <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
+                  <th class="py-3 px-4">Siswa</th>
+                  <th class="py-3 px-3">Jenis Keterangan</th>
+                  <th class="py-3 px-3">Rentang Tanggal</th>
+                  <th class="py-3 px-3">Alasan / Uraian</th>
+                  <th class="py-3 px-3 text-center">Foto Bukti</th>
+                  <th class="py-3 px-3 text-center">Status</th>
+                  <th class="py-3 px-4 text-right">Tindakan</th>
+                </tr>
+              </thead>
+              <tbody id="tableIzinBody" class="divide-y divide-slate-100"></tbody>
+            </table>
+          </div>
+          <div id="tableIzinEmpty" class="hidden py-12 text-center text-slate-400 text-xs italic">
+            Tidak ada data permohonan izin/sakit pada status yang dipilih.
+          </div>
+        </div>
+      </section>
+
       <!-- ================================================================== -->
       <!-- VIEW 6: JURNAL KEGIATAN HARIAN PKL                                 -->
       <!-- ================================================================== -->
@@ -763,7 +1017,7 @@
             <p class="text-xs sm:text-sm text-slate-500">Catat kompetensi harian dan pantau verifikasi dari guru pembimbing.</p>
           </div>
           
-          <button id="btnTambahJurnal" onclick="openModalJurnal()" class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold shadow-sm transition">
+          <button id="btnTambahJurnal" onclick="openModalJurnal()" class="hidden inline-flex items-center gap-1.5 px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold shadow-sm transition">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
             <span>Tulis Jurnal Baru</span>
           </button>
@@ -875,8 +1129,8 @@
             <label class="block font-semibold text-slate-700 mb-1">Jurusan *</label>
             <select id="siswaInputJurusan" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800">
               <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
-              <option value="Teknik Komputer dan Jaringan">Teknek Kendaraan Ringan</option>
-              <option value="Multimedia">DPIB</option>
+              <option value="Teknik Komputer dan Jaringan">Teknik Komputer & Jaringan</option>
+              <option value="Multimedia">Multimedia</option>
             </select>
           </div>
         </div>
@@ -911,6 +1165,23 @@
           <div>
             <label class="block font-semibold text-slate-700 mb-1">No. HP Orang Tua / Wali</label>
             <input type="text" id="siswaInputHpOrtu" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800">
+          </div>
+        </div>
+
+        <div class="p-3 bg-indigo-50/70 border border-indigo-100 rounded-xl space-y-2">
+          <p class="font-bold text-indigo-950 text-xs flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <span>Periode Pelaksanaan PKL (Mulai & Berakhir) *</span>
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">Tanggal Mulai PKL</label>
+              <input type="date" id="siswaInputTglMulai" required value="2026-07-01" class="w-full px-3 py-2 bg-white border border-indigo-200 rounded-xl text-slate-800">
+            </div>
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">Tanggal Berakhir PKL</label>
+              <input type="date" id="siswaInputTglSelesai" required value="2026-12-31" class="w-full px-3 py-2 bg-white border border-indigo-200 rounded-xl text-slate-800">
+            </div>
           </div>
         </div>
 
@@ -1007,6 +1278,15 @@
             <input type="time" id="mitraInputJamPulang" value="16:30"
               class="w-full px-2 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800">
           </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Sistem Hari Kerja Operasional *</label>
+          <select id="mitraInputHariKerja" required class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 font-medium">
+            <option value="6 Hari (Senin-Sabtu)">6 Hari Kerja (Senin - Sabtu) [Standar Industri]</option>
+            <option value="5 Hari (Senin-Jumat)">5 Hari Kerja (Senin - Jumat)</option>
+            <option value="7 Hari (Shift/Setiap Hari)">7 Hari Kerja (Shift / Operasional Penuh)</option>
+          </select>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1130,6 +1410,86 @@
     </div>
   </div>
 
+
+  <!-- ====================================================================== -->
+  <!-- MODAL: FORM ABSENSI KUNJUNGAN MONITORING PEMBIMBING                    -->
+  <!-- ====================================================================== -->
+  <div id="modalMonitoring" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 max-w-lg w-full p-6 my-8 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">Absen Kunjungan Monitoring</h3>
+        </div>
+        <button onclick="closeModalMonitoring()" class="text-slate-400 hover:text-slate-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <form id="formMonitoring" onsubmit="handleSaveMonitoring(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Pilih Perusahaan Mitra yang Dikunjungi *</label>
+          <select id="monitoringInputMitra" required onchange="checkMonitoringGeofence()" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 font-medium">
+            <option value="">Pilih Perusahaan Mitra</option>
+          </select>
+        </div>
+
+        <!-- Status Geofencing GPS Guru Pembimbing -->
+        <div id="monitoringGpsStatusBox" class="p-3 rounded-xl border border-slate-200 bg-slate-50 space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-700 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+              <span>Verifikasi Lokasi GPS:</span>
+            </span>
+            <button type="button" onclick="detectMonitoringGPS()" class="text-[10px] text-indigo-600 hover:underline font-semibold">Perbarui GPS</button>
+          </div>
+          <p id="monitoringGpsInfoText" class="text-slate-500 text-[11px]">Memeriksa koordinat GPS perangkat Anda...</p>
+          <p id="monitoringGpsRadiusResult" class="text-xs font-semibold text-slate-700">-</p>
+        </div>
+
+        <!-- Foto Bukti Kunjungan / Kamera Snapshot -->
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Foto Bukti Kunjungan di Lokasi Mitra</label>
+          <div class="flex items-center gap-2 mb-2">
+            <button type="button" onclick="triggerMonitoringCamera()" class="px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg text-xs font-semibold transition flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Gunakan Kamera</span>
+            </button>
+            <span class="text-slate-400 text-[11px]">atau upload berkas:</span>
+            <input type="file" id="monitoringInputFotoFile" accept="image/*" onchange="previewMonitoringFile(event)" class="text-[10px] text-slate-500">
+          </div>
+          
+          <div id="monitoringCameraContainer" class="hidden relative rounded-xl overflow-hidden bg-slate-900 aspect-video flex items-center justify-center mb-2">
+            <video id="monitoringVideoFeed" autoplay playsinline class="w-full h-full object-cover"></video>
+            <button type="button" onclick="takeMonitoringSnapshot()" class="absolute bottom-2.5 px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-bold text-xs shadow-lg">Ambil Foto</button>
+          </div>
+
+          <div id="monitoringPhotoPreviewBox" class="hidden relative rounded-xl overflow-hidden border border-slate-200 aspect-video bg-slate-100">
+            <img id="monitoringPreviewImg" src="" alt="Pratinjau Foto" class="w-full h-full object-cover">
+            <button type="button" onclick="clearMonitoringPhoto()" class="absolute top-2 right-2 p-1 bg-rose-600 text-white rounded-full text-xs shadow">✕</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Catatan Supervisi & Evaluasi Lapangan *</label>
+          <textarea id="monitoringInputCatatan" rows="3" required placeholder="Contoh: Koordinasi dengan HRD/Instruktur industri. Siswa terpantau hadir tepat waktu, disiplin mematuhi SOP, dan aktif menyelesaikan tugas..."
+            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800"></textarea>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-end gap-2">
+          <button type="button" onclick="closeModalMonitoring()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-medium transition">
+            Batal
+          </button>
+          <button type="submit" id="btnSubmitMonitoring" class="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 active:scale-[0.99] text-white rounded-xl font-semibold shadow-sm transition">
+            Simpan Absen Monitoring
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- ====================================================================== -->
   <!-- MODAL: FORM TULIS JURNAL HARIAN PKL                                    -->
   <!-- ====================================================================== -->
@@ -1221,6 +1581,68 @@
         </button>
         <button type="button" onclick="submitVerifikasiJurnal('Disetujui')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold shadow-sm transition">
           Setujui (Approve)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- MODAL: REVIEW & VERIFIKASI PERMOHONAN IZIN / SAKIT (PEMBIMBING)         -->
+  <!-- ====================================================================== -->
+  <div id="modalReviewIzin" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 max-w-lg w-full p-6 my-8 max-h-[90vh] overflow-y-auto text-xs">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <h3 class="text-base font-bold text-slate-900">Verifikasi Permohonan Izin / Sakit</h3>
+        <button onclick="closeModalReviewIzin()" class="text-slate-400 hover:text-slate-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <input type="hidden" id="reviewIzinId">
+      <div class="space-y-3 mb-4">
+        <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100">
+          <div>
+            <span class="text-slate-400 text-[10px] uppercase font-bold block">Siswa Pemohon</span>
+            <p id="reviewIzinNamaSiswa" class="font-bold text-slate-900 text-sm">-</p>
+            <p id="reviewIzinInfoSiswa" class="text-slate-500 text-[11px]">-</p>
+          </div>
+          <div id="reviewIzinJenisBadge">-</div>
+        </div>
+
+        <div>
+          <span class="text-slate-500 font-semibold block mb-0.5">Rentang Tanggal Berhalangan:</span>
+          <p id="reviewIzinRentangTgl" class="font-bold text-indigo-700 bg-indigo-50/60 p-2 rounded-lg border border-indigo-100">-</p>
+        </div>
+
+        <div>
+          <span class="text-slate-500 font-semibold block mb-0.5">Alasan / Uraian Siswa:</span>
+          <p id="reviewIzinAlasan" class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 text-slate-700 whitespace-pre-line">-</p>
+        </div>
+
+        <div>
+          <span class="text-slate-500 font-semibold block mb-1">Foto Bukti Surat (Surat Dokter / Surat Ortu):</span>
+          <div id="reviewIzinFotoContainer" class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 max-h-60 flex items-center justify-center cursor-pointer">
+            <img id="reviewIzinFotoImg" src="" alt="Bukti Surat" class="max-h-60 w-auto object-contain">
+          </div>
+          <span class="text-[10px] text-slate-400 mt-1 block text-center">Klik gambar untuk melihat ukuran penuh</span>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Catatan & Masukan Pembimbing:</label>
+          <input type="text" id="reviewIzinCatatan" placeholder="Contoh: Disetujui. Lekas sembuh dan istirahat yang cukup."
+            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800">
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-slate-100 flex items-center justify-end gap-2">
+        <button type="button" onclick="closeModalReviewIzin()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-medium transition">
+          Batal
+        </button>
+        <button type="button" onclick="executeVerifyIzin('Ditolak')" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-semibold shadow-sm transition">
+          Tolak Permohonan (Alpa)
+        </button>
+        <button type="button" onclick="executeVerifyIzin('Disetujui')" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold shadow-sm transition">
+          Setujui Permohonan
         </button>
       </div>
     </div>
@@ -1331,8 +1753,12 @@
         jurnal: [],
         kriteria: [],
         nilaiAkhir: [],
+        monitoring: [],
+        izin: [],
         dashboard: null
-      }
+      },
+      monitoringStream: null,
+      monitoringPhoto: null
     };
 
     var MockInitialData = {
@@ -1347,12 +1773,12 @@
         { id: 'USR-202611-005', username: 'pembimbing2', nama: 'Sri Rahayu, S.Kom.', email: 'sri@sekolah.sch.id', noHp: '081377889900', status: 'Aktif' }
       ],
       mitra: [
-        { id: 'MTR-202611-001', kode: 'PT-TELKOM-BDG', nama: 'PT Telkom Akses Bandung', alamat: 'Jl. Gegerkalong Hilir No. 47', latitude: -6.865432, longitude: 107.591234, radiusMeter: 200, jamMasuk: '08:00', batasTerlambat: '08:15', jamPulang: '16:30', pic: 'Bapak Rahmat (HRD)', kontakPic: '08119876543', status: 'Aktif', idPembimbing: 'USR-202611-002', namaPembimbing: 'Drs. Hendro Wibowo, M.Pd.' },
-        { id: 'MTR-202611-002', kode: 'PT-LEN-IND', nama: 'PT LEN Industri (Persero)', alamat: 'Jl. Soekarno Hatta No. 542', latitude: -6.942150, longitude: 107.643210, radiusMeter: 150, jamMasuk: '07:30', batasTerlambat: '07:45', jamPulang: '16:00', pic: 'Ibu Maya (Diklat)', kontakPic: '08123344556', status: 'Aktif', idPembimbing: 'USR-202611-005', namaPembimbing: 'Sri Rahayu, S.Kom.' }
+        { id: 'MTR-202611-001', kode: 'PT-TELKOM-BDG', nama: 'PT Telkom Akses Bandung', alamat: 'Jl. Gegerkalong Hilir No. 47', latitude: -6.865432, longitude: 107.591234, radiusMeter: 200, jamMasuk: '08:00', batasTerlambat: '08:15', jamPulang: '16:30', pic: 'Bapak Rahmat (HRD)', kontakPic: '08119876543', status: 'Aktif', idPembimbing: 'USR-202611-002', namaPembimbing: 'Drs. Hendro Wibowo, M.Pd.', sistemHariKerja: '6 Hari (Senin-Sabtu)' },
+        { id: 'MTR-202611-002', kode: 'PT-LEN-IND', nama: 'PT LEN Industri (Persero)', alamat: 'Jl. Soekarno Hatta No. 542', latitude: -6.942150, longitude: 107.643210, radiusMeter: 150, jamMasuk: '07:30', batasTerlambat: '07:45', jamPulang: '16:00', pic: 'Ibu Maya (Diklat)', kontakPic: '08123344556', status: 'Aktif', idPembimbing: 'USR-202611-005', namaPembimbing: 'Sri Rahayu, S.Kom.', sistemHariKerja: '5 Hari (Senin-Jumat)' }
       ],
       siswa: [
-        { id: 'SIS-202611-001', nis: '20241001', nisn: '0061234567', nama: 'Ahmad Fauzi', jk: 'Laki-laki', tempatLahir: 'Bandung', tglLahir: '2008-05-14', alamat: 'Jl. Dipatiukur No. 12', noHp: '085712345678', email: 'fauzi@siswa.sch.id', kelas: 'XII RPL 1', jurusan: 'Rekayasa Perangkat Lunak', tahunPelajaran: '2026/2027', namaOrtu: 'Sugiono', noHpOrtu: '081345678901', idMitra: 'MTR-202611-001', namaMitra: 'PT Telkom Akses Bandung', idPembimbing: 'USR-202611-002', namaPembimbing: 'Drs. Hendro Wibowo, M.Pd.', statusWajah: 'Sudah', statusPKL: 'Sedang PKL' },
-        { id: 'SIS-202611-002', nis: '20241002', nisn: '0061234568', nama: 'Siti Nurhaliza', jk: 'Perempuan', tempatLahir: 'Bandung', tglLahir: '2008-08-20', alamat: 'Jl. Buah Batu No. 88', noHp: '085798765432', email: 'siti@siswa.sch.id', kelas: 'XII RPL 2', jurusan: 'Rekayasa Perangkat Lunak', tahunPelajaran: '2026/2027', namaOrtu: 'Herman Sutisna', noHpOrtu: '081399887766', idMitra: 'MTR-202611-002', namaMitra: 'PT LEN Industri (Persero)', idPembimbing: 'USR-202611-005', namaPembimbing: 'Sri Rahayu, S.Kom.', statusWajah: 'Belum', statusPKL: 'Sedang PKL' }
+        { id: 'SIS-202611-001', nis: '20241001', nisn: '0061234567', nama: 'Ahmad Fauzi', jk: 'Laki-laki', tempatLahir: 'Bandung', tglLahir: '2008-05-14', alamat: 'Jl. Dipatiukur No. 12', noHp: '085712345678', email: 'fauzi@siswa.sch.id', kelas: 'XII RPL 1', jurusan: 'Rekayasa Perangkat Lunak', tahunPelajaran: '2026/2027', namaOrtu: 'Sugiono', noHpOrtu: '081345678901', idMitra: 'MTR-202611-001', namaMitra: 'PT Telkom Akses Bandung', idPembimbing: 'USR-202611-002', namaPembimbing: 'Drs. Hendro Wibowo, M.Pd.', statusWajah: 'Sudah', statusPKL: 'Sedang PKL', tglMulaiPKL: '2026-07-01', tglSelesaiPKL: '2026-12-31' },
+        { id: 'SIS-202611-002', nis: '20241002', nisn: '0061234568', nama: 'Siti Nurhaliza', jk: 'Perempuan', tempatLahir: 'Bandung', tglLahir: '2008-08-20', alamat: 'Jl. Buah Batu No. 88', noHp: '085798765432', email: 'siti@siswa.sch.id', kelas: 'XII RPL 2', jurusan: 'Rekayasa Perangkat Lunak', tahunPelajaran: '2026/2027', namaOrtu: 'Herman Sutisna', noHpOrtu: '081399887766', idMitra: 'MTR-202611-002', namaMitra: 'PT LEN Industri (Persero)', idPembimbing: 'USR-202611-005', namaPembimbing: 'Sri Rahayu, S.Kom.', statusWajah: 'Belum', statusPKL: 'Sedang PKL', tglMulaiPKL: '2026-07-01', tglSelesaiPKL: '2026-12-31' }
       ],
       kriteria: [
         { id: 'KRT-01', jurusan: 'Rekayasa Perangkat Lunak', kodeAspek: 'ASP-01', namaAspek: 'Kedisiplinan & Kehadiran', bobot: 20 },
@@ -1365,6 +1791,12 @@
       ],
       jurnal: [
         { id: 'JRN-001', tanggal: getTodayDateString(), nis: '20241001', namaSiswa: 'Ahmad Fauzi', idMitra: 'MTR-202611-001', idPembimbing: 'USR-202611-002', uraian: 'Mengonfigurasi switch manageable VLAN dan merapikan kabel rak server utama di PT Telkom.', kompetensi: 'Jaringan Komputer & Infrastruktur', status: 'Disetujui', catatan: 'Kerja bagus, dokumentasi rapi.', nilai: 90 }
+      ],
+      monitoring: [
+        { id: 'MON-001', tanggal: getTodayDateString(), idPembimbing: 'USR-202611-002', namaPembimbing: 'Drs. Hendro Wibowo, M.Pd.', idMitra: 'MTR-202611-001', namaMitra: 'PT Telkom Akses Bandung', catatan: 'Supervisi rutin di lab IT. Koordinasi dengan HRD Bapak Rahmat, siswa Ahmad Fauzi menunjukkan performa kerja memuaskan dan disiplin.', foto: '', jarak: 15.4, statusLokasi: 'Valid Sesuai Radius', createdAt: getFormattedIndonesianDate() }
+      ],
+      izin: [
+        { id: 'IZN-202611-001', tanggalPengajuan: getTodayDateString(), nis: '20241002', nama: 'Siti Nurhaliza', kelas: 'XII RPL 2', jurusan: 'Rekayasa Perangkat Lunak', idMitra: 'MTR-202611-002', namaMitra: 'PT LEN Industri (Persero)', idPembimbing: 'USR-202611-005', namaPembimbing: 'Sri Rahayu, S.Kom.', jenis: 'Sakit', tglMulai: getTodayDateString(), tglSelesai: getTodayDateString(), alasan: 'Sakit demam dan flu, istirahat dokter 1 hari.', fotoBukti: '', status: 'Menunggu', catatanPembimbing: '', tanggalVerifikasi: '', createdAt: getFormattedIndonesianDate() }
       ]
     };
 
@@ -1396,6 +1828,8 @@
         AppState.cache.kriteria = MockInitialData.kriteria;
         AppState.cache.absensi = MockInitialData.absensi;
         AppState.cache.jurnal = MockInitialData.jurnal;
+        AppState.cache.monitoring = MockInitialData.monitoring;
+        AppState.cache.izin = MockInitialData.izin;
       } else {
         try {
           var parsed = JSON.parse(savedData);
@@ -1405,6 +1839,8 @@
           AppState.cache.kriteria = parsed.kriteria || MockInitialData.kriteria;
           AppState.cache.absensi = parsed.absensi || MockInitialData.absensi;
           AppState.cache.jurnal = parsed.jurnal || MockInitialData.jurnal;
+          AppState.cache.monitoring = parsed.monitoring || MockInitialData.monitoring;
+          AppState.cache.izin = parsed.izin || MockInitialData.izin;
         } catch (e) {
           AppState.cache.siswa = MockInitialData.siswa;
         }
@@ -1418,7 +1854,9 @@
         mitra: AppState.cache.mitra,
         kriteria: AppState.cache.kriteria,
         absensi: AppState.cache.absensi,
-        jurnal: AppState.cache.jurnal
+        jurnal: AppState.cache.jurnal,
+        monitoring: AppState.cache.monitoring,
+        izin: AppState.cache.izin
       };
       localStorage.setItem('sim_pkl_mock_data', JSON.stringify(store));
     }
@@ -1497,6 +1935,8 @@
       loadSiswaTableData();
       loadJurnalCards();
       loadPenilaianTable();
+      loadMonitoringData();
+      loadPengajuanIzinData();
       initRekapDefaults();
     }
 
@@ -1518,6 +1958,8 @@
           { id: 'viewDataPembimbing', label: 'Pembimbing', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' },
           { id: 'viewDataMitra', label: 'Mitra Industri', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
           { id: 'viewRekapKehadiran', label: 'Rekap Presensi', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+          { id: 'viewVerifikasiIzin', label: 'Verifikasi Izin', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+          { id: 'viewMonitoring', label: 'Log Monitoring', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
           { id: 'viewJurnal', label: 'Jurnal PKL', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
           { id: 'viewPenilaian', label: 'Penilaian', icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' }
         ];
@@ -1526,6 +1968,8 @@
           { id: 'viewDashboard', label: 'Dashboard Binaan', icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z' },
           { id: 'viewDataSiswa', label: 'Siswa Binaan', icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z' },
           { id: 'viewRekapKehadiran', label: 'Rekap Binaan', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+          { id: 'viewVerifikasiIzin', label: 'Verifikasi Izin', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+          { id: 'viewMonitoring', label: 'Kunjungan Monitoring', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z' },
           { id: 'viewJurnal', label: 'Verifikasi Jurnal', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
           { id: 'viewPenilaian', label: 'Nilai Akhir', icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' }
         ];
@@ -1564,7 +2008,7 @@
         stopCameraStream();
       }
 
-      var views = ['viewDashboard', 'viewAbsensiWajah', 'viewDataSiswa', 'viewDataPembimbing', 'viewDataMitra', 'viewRekapKehadiran', 'viewJurnal', 'viewPenilaian'];
+      var views = ['viewDashboard', 'viewAbsensiWajah', 'viewDataSiswa', 'viewDataPembimbing', 'viewDataMitra', 'viewRekapKehadiran', 'viewVerifikasiIzin', 'viewMonitoring', 'viewJurnal', 'viewPenilaian'];
       views.forEach(function(v) {
         var el = document.getElementById(v);
         if (el) el.classList.add('hidden');
@@ -1598,8 +2042,25 @@
 
       if (targetViewId === 'viewAbsensiWajah') {
         initGeofencingDetection();
+        if (AppState.currentUser && AppState.currentUser.role === 'Siswa') {
+          renderSiswaRiwayatIzin();
+        }
       } else if (targetViewId === 'viewRekapKehadiran') {
         loadRekapData();
+      } else if (targetViewId === 'viewMonitoring') {
+        loadMonitoringData();
+      } else if (targetViewId === 'viewVerifikasiIzin') {
+        loadPengajuanIzinData();
+      }
+
+      // Pastikan tombol Tulis Jurnal HANYA terlihat oleh Siswa (Sesuai Permintaan)
+      var btnJurnal = document.getElementById('btnTambahJurnal');
+      if (btnJurnal) {
+        if (AppState.currentUser && AppState.currentUser.role === 'Siswa') {
+          btnJurnal.classList.remove('hidden');
+        } else {
+          btnJurnal.classList.add('hidden');
+        }
       }
     }
 
@@ -1687,12 +2148,26 @@
       AppState.absensiMode = mode;
       var btnMasuk = document.getElementById('btnModeMasuk');
       var btnPulang = document.getElementById('btnModePulang');
-      if (mode === 'masuk') {
-        btnMasuk.className = 'flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-sm';
-        btnPulang.className = 'flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900';
+      var btnIzin = document.getElementById('btnModeIzin');
+      var boxKamera = document.getElementById('boxKameraAbsensi');
+      var boxIzin = document.getElementById('boxPengajuanIzin');
+
+      var activeClass = 'flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-sm';
+      var inactiveClass = 'flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900';
+
+      if (btnMasuk) btnMasuk.className = (mode === 'masuk') ? activeClass : inactiveClass;
+      if (btnPulang) btnPulang.className = (mode === 'pulang') ? activeClass : inactiveClass;
+      if (btnIzin) btnIzin.className = (mode === 'izin') ? activeClass : inactiveClass;
+
+      if (mode === 'izin') {
+        if (boxKamera) boxKamera.classList.add('hidden');
+        if (boxIzin) boxIzin.classList.remove('hidden');
+        stopCameraStream();
+        initIzinFormDates();
+        renderSiswaRiwayatIzin();
       } else {
-        btnPulang.className = 'flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-sm';
-        btnMasuk.className = 'flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900';
+        if (boxKamera) boxKamera.classList.remove('hidden');
+        if (boxIzin) boxIzin.classList.add('hidden');
       }
     }
 
@@ -1773,6 +2248,23 @@
 
     function triggerFaceScanAndLiveness() {
       if (AppState.isScanningFace) return;
+
+      var currentNIS = AppState.currentUser ? (AppState.currentUser.nis || '20241001') : '20241001';
+      var currentStudent = AppState.cache.siswa.find(function(s) { return s.nis === currentNIS; });
+      if (currentStudent && currentStudent.tglMulaiPKL && currentStudent.tglSelesaiPKL) {
+        var today = getTodayDateString();
+        if (today < currentStudent.tglMulaiPKL) {
+          showToast('Absensi ditolak: Periode PKL Anda belum dimulai (Mulai: ' + currentStudent.tglMulaiPKL + ')', 'warning');
+          document.getElementById('livenessText').textContent = 'Periode PKL belum dimulai (' + currentStudent.tglMulaiPKL + ')';
+          return;
+        }
+        if (today > currentStudent.tglSelesaiPKL) {
+          showToast('Absensi ditolak: Periode PKL Anda telah berakhir (' + currentStudent.tglSelesaiPKL + ')', 'warning');
+          document.getElementById('livenessText').textContent = 'Periode PKL telah berakhir (' + currentStudent.tglSelesaiPKL + ')';
+          return;
+        }
+      }
+
       AppState.isScanningFace = true;
       var instruct = document.getElementById('livenessText');
       instruct.textContent = 'Mendeteksi pergerakan wajah hidup (Liveness)...';
@@ -1934,6 +2426,18 @@
           '<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">Terdaftar</span>' :
           '<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">Belum</span>';
 
+        var todayStr = getTodayDateString();
+        var tMulai = s.tglMulaiPKL || '2026-07-01';
+        var tSelesai = s.tglSelesaiPKL || '2026-12-31';
+        var badgeStatusPKL = '';
+        if (todayStr < tMulai) {
+          badgeStatusPKL = '<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 text-slate-700 border border-slate-200">Belum Mulai</span>';
+        } else if (todayStr > tSelesai) {
+          badgeStatusPKL = '<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">Selesai PKL</span>';
+        } else {
+          badgeStatusPKL = '<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">Sedang PKL</span>';
+        }
+
         tr.innerHTML = '<td class="py-3 px-4">' +
           '<div class="flex items-center gap-2.5">' +
           '<div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-xs shrink-0">' + (s.nama ? s.nama.charAt(0) : 'S') + '</div>' +
@@ -1950,7 +2454,7 @@
           '<td class="py-3 px-3 font-medium text-slate-700">' + escapeHtml(s.namaMitra || '-') + '</td>' +
           '<td class="py-3 px-3"><span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-100">' + escapeHtml(s.namaPembimbing || '-') + '</span></td>' +
           '<td class="py-3 px-3 text-center">' + badgeWajah + '</td>' +
-          '<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-50 text-blue-700">' + escapeHtml(s.statusPKL || 'Sedang PKL') + '</span></td>' +
+          '<td class="py-3 px-3 text-center">' + badgeStatusPKL + '<span class="text-[9px] text-slate-400 block mt-0.5 whitespace-nowrap">' + tMulai + ' s.d ' + tSelesai + '</span></td>' +
           '<td class="py-3 px-4 text-right">' +
           '<div class="inline-flex items-center gap-1">' +
           '<button onclick="openModalSiswa(\'' + s.id + '\')" class="p-1.5 text-slate-500 hover:text-indigo-600 rounded-lg hover:bg-slate-100 transition" title="Edit Data">' +
@@ -1987,11 +2491,15 @@
           document.getElementById('siswaInputEmail').value = s.email || '';
           document.getElementById('siswaInputOrtu').value = s.namaOrtu || '';
           document.getElementById('siswaInputHpOrtu').value = s.noHpOrtu || '';
+          document.getElementById('siswaInputTglMulai').value = s.tglMulaiPKL || '2026-07-01';
+          document.getElementById('siswaInputTglSelesai').value = s.tglSelesaiPKL || '2026-12-31';
         }
       } else {
         document.getElementById('modalSiswaTitle').textContent = 'Tambah Data Siswa';
         document.getElementById('formSiswa').reset();
         document.getElementById('siswaInputId').value = '';
+        document.getElementById('siswaInputTglMulai').value = '2026-07-01';
+        document.getElementById('siswaInputTglSelesai').value = '2026-12-31';
       }
     }
 
@@ -2025,7 +2533,9 @@
         noHp: document.getElementById('siswaInputHp').value.trim(),
         email: document.getElementById('siswaInputEmail').value.trim(),
         namaOrtu: document.getElementById('siswaInputOrtu').value.trim(),
-        noHpOrtu: document.getElementById('siswaInputHpOrtu').value.trim()
+        noHpOrtu: document.getElementById('siswaInputHpOrtu').value.trim(),
+        tglMulaiPKL: document.getElementById('siswaInputTglMulai').value || '2026-07-01',
+        tglSelesaiPKL: document.getElementById('siswaInputTglSelesai').value || '2026-12-31'
       };
 
       callBackendApi('saveSiswa', payload, function(res) {
@@ -2231,6 +2741,7 @@
           '<p class="text-xs text-slate-500 line-clamp-2">' + escapeHtml(m.alamat) + '</p>' +
           '<div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 space-y-1.5">' +
           '<p class="flex items-center gap-1.5"><strong class="text-slate-800">Pembimbing:</strong> <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-bold">' + escapeHtml(m.namaPembimbing || 'Belum diatur') + '</span></p>' +
+          '<p>&bull; Sistem Kerja: <strong class="text-indigo-600">' + (m.sistemHariKerja || '6 Hari (Senin-Sabtu)') + '</strong></p>' +
           '<p>&bull; Radius Geofencing: <strong>' + m.radiusMeter + ' meter</strong></p>' +
           '<p>&bull; Jam Kerja: <strong>' + m.jamMasuk + ' - ' + m.jamPulang + '</strong> (Telat: > ' + m.batasTerlambat + ')</p>' +
           '<p>&bull; PIC: ' + escapeHtml(m.pic || '-') + ' (' + (m.kontakPic || '-') + ')</p>' +
@@ -2270,6 +2781,7 @@
           document.getElementById('mitraInputJamMasuk').value = m.jamMasuk || '08:00';
           document.getElementById('mitraInputBatasTelat').value = m.batasTerlambat || '08:15';
           document.getElementById('mitraInputJamPulang').value = m.jamPulang || '16:30';
+          document.getElementById('mitraInputHariKerja').value = m.sistemHariKerja || '6 Hari (Senin-Sabtu)';
           document.getElementById('mitraInputPic').value = m.pic || '';
           document.getElementById('mitraInputKontakPic').value = m.kontakPic || '';
         }
@@ -2278,6 +2790,7 @@
         document.getElementById('formMitra').reset();
         document.getElementById('mitraInputId').value = '';
         document.getElementById('mitraInputKode').value = 'MITRA-' + Math.floor(100 + Math.random() * 900);
+        document.getElementById('mitraInputHariKerja').value = '6 Hari (Senin-Sabtu)';
       }
     }
 
@@ -2322,6 +2835,7 @@
         jamMasuk: document.getElementById('mitraInputJamMasuk').value,
         batasTerlambat: document.getElementById('mitraInputBatasTelat').value,
         jamPulang: document.getElementById('mitraInputJamPulang').value,
+        sistemHariKerja: document.getElementById('mitraInputHariKerja').value || '6 Hari (Senin-Sabtu)',
         pic: document.getElementById('mitraInputPic').value.trim(),
         kontakPic: document.getElementById('mitraInputKontakPic').value.trim(),
         status: 'Aktif'
@@ -2396,6 +2910,7 @@
     function loadRekapData() {
       var payload = {
         periodeType: AppState.rekapPeriode,
+        basisHariKerja: document.getElementById('selectBasisHariKerja') ? document.getElementById('selectBasisHariKerja').value : 'auto',
         tanggal: document.getElementById('rekapTanggalInput').value,
         startDate: document.getElementById('rekapStartDateInput').value,
         endDate: document.getElementById('rekapEndDateInput').value,
@@ -2442,13 +2957,15 @@
 
         var badgeColor = item.persenKehadiran >= 85 ? 'text-emerald-700 bg-emerald-50 border-emerald-200' : (item.persenKehadiran >= 60 ? 'text-amber-700 bg-amber-50 border-amber-200' : 'text-rose-700 bg-rose-50 border-rose-200');
 
+        var sistemBadge = item.sistemKerja ? '<span class="inline-block px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-medium mr-1 text-[9px]">' + escapeHtml(item.sistemKerja) + '</span>' : '';
+
         tr.innerHTML = '<td class="py-3 px-4">' +
           '<p class="font-bold text-slate-900">' + escapeHtml(item.nama) + '</p>' +
           '<p class="text-[10px] text-slate-500">NIS: ' + item.nis + ' &bull; ' + escapeHtml(item.kelas) + '</p>' +
           '</td>' +
           '<td class="py-3 px-3">' +
           '<p class="font-medium text-slate-800">' + escapeHtml(item.mitra) + '</p>' +
-          '<p class="text-[10px] text-indigo-600 font-semibold">' + escapeHtml(item.pembimbing) + '</p>' +
+          '<p class="text-[10px] text-slate-500">' + sistemBadge + '<span class="text-indigo-600 font-semibold">' + escapeHtml(item.pembimbing) + '</span></p>' +
           '</td>' +
           '<td class="py-3 px-2 text-center font-bold text-emerald-600">' + item.hadir + '</td>' +
           '<td class="py-3 px-2 text-center font-bold text-amber-600">' + item.terlambat + '</td>' +
@@ -2778,6 +3295,707 @@
     }
 
     // ------------------------------------------------------------------------
+    // FITUR ABSENSI & KUNJUNGAN MONITORING GURU PEMBIMBING (REV-202611-005)
+    // ------------------------------------------------------------------------
+    var MonitoringState = {
+      stream: null,
+      photoBase64: null,
+      gpsCoords: { lat: null, lng: null },
+      distanceToMitra: null,
+      isGpsValid: false
+    };
+
+    function loadMonitoringData() {
+      var isPembimbing = AppState.currentUser && AppState.currentUser.role === 'Pembimbing';
+      var payload = {
+        role: AppState.currentUser ? AppState.currentUser.role : 'Admin',
+        idPembimbing: isPembimbing ? AppState.currentUser.id : ''
+      };
+
+      callBackendApi('getMonitoringList', payload, function(res) {
+        if (res.success && res.data) {
+          AppState.cache.monitoring = res.data;
+          syncLocalMockStorage();
+          populateMonitoringFilterPembimbing();
+          renderMonitoringTable();
+        }
+      });
+    }
+
+    function populateMonitoringFilterPembimbing() {
+      var filterSel = document.getElementById('filterMonitoringPembimbing');
+      if (!filterSel) return;
+      filterSel.innerHTML = '<option value="">Semua Guru Pembimbing</option>';
+      AppState.cache.pembimbing.forEach(function(p) {
+        filterSel.innerHTML += '<option value="' + p.id + '">' + escapeHtml(p.nama) + '</option>';
+      });
+      if (AppState.currentUser && AppState.currentUser.role === 'Pembimbing') {
+        filterSel.value = AppState.currentUser.id;
+        if (filterSel.parentElement) filterSel.parentElement.classList.add('hidden');
+      }
+    }
+
+    function renderMonitoringTable() {
+      var tbody = document.getElementById('tableMonitoringBody');
+      var emptyEl = document.getElementById('tableMonitoringEmpty');
+      var filterVal = document.getElementById('filterMonitoringPembimbing') ? document.getElementById('filterMonitoringPembimbing').value : '';
+      
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      var list = AppState.cache.monitoring || [];
+
+      if (AppState.currentUser && AppState.currentUser.role === 'Pembimbing') {
+        list = list.filter(function(m) { return m.idPembimbing === AppState.currentUser.id; });
+      } else if (filterVal) {
+        list = list.filter(function(m) { return m.idPembimbing === filterVal; });
+      }
+
+      // Update stat cards
+      var statTotal = document.getElementById('statTotalMonitoring');
+      var statMitra = document.getElementById('statMitraMonitoring');
+      var statGps = document.getElementById('statGpsValidMonitoring');
+      
+      if (statTotal) statTotal.textContent = list.length;
+      if (statMitra) {
+        var uniqueMitra = {};
+        list.forEach(function(m) { if (m.idMitra) uniqueMitra[m.idMitra] = true; });
+        statMitra.textContent = Object.keys(uniqueMitra).length + ' Mitra';
+      }
+      if (statGps) {
+        var validGpsCount = list.filter(function(m) { 
+          var s = (m.statusLokasi || '');
+          return s.includes('Valid') || s.includes('Sesuai'); 
+        }).length;
+        statGps.textContent = validGpsCount + ' Valid';
+      }
+
+      if (list.length === 0) {
+        if (emptyEl) emptyEl.classList.remove('hidden');
+        return;
+      }
+      if (emptyEl) emptyEl.classList.add('hidden');
+
+      list.forEach(function(item) {
+        var tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 transition border-b border-slate-100';
+
+        var gpsBadge = '';
+        var statusLok = item.statusLokasi || 'Valid Sesuai Radius';
+        if (statusLok.includes('Valid') || statusLok.includes('Sesuai')) {
+          gpsBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">📍 ' + escapeHtml(statusLok) + (item.jarak ? ' (' + Math.round(item.jarak) + 'm)' : '') + '</span>';
+        } else {
+          gpsBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">⚠️ ' + escapeHtml(statusLok) + (item.jarak ? ' (' + Math.round(item.jarak) + 'm)' : '') + '</span>';
+        }
+
+        var fotoCol = item.foto ? 
+          '<button type="button" onclick="previewMonitoringModalImage(\'' + item.foto + '\')" class="inline-flex items-center gap-1 px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg text-[10px] font-semibold transition">Lihat Foto</button>' :
+          '<span class="text-slate-400 text-[10px]">-</span>';
+
+        tr.innerHTML = '<td class="py-3 px-4 font-semibold text-slate-800">' +
+          '<p>' + (item.tanggal || '-') + '</p>' +
+          '<p class="text-[10px] text-slate-400 font-normal">' + (item.createdAt || '') + '</p>' +
+          '</td>' +
+          '<td class="py-3 px-3">' +
+          '<p class="font-bold text-slate-900">' + escapeHtml(item.namaPembimbing || '-') + '</p>' +
+          '<span class="text-[10px] text-slate-400 font-mono">ID: ' + item.id + '</span>' +
+          '</td>' +
+          '<td class="py-3 px-3 font-semibold text-indigo-700">' + escapeHtml(item.namaMitra || '-') + '</td>' +
+          '<td class="py-3 px-3">' + gpsBadge + '</td>' +
+          '<td class="py-3 px-3 text-slate-600 max-w-xs">' +
+          '<p class="line-clamp-2 text-[11px]">' + escapeHtml(item.catatan || '-') + '</p>' +
+          '</td>' +
+          '<td class="py-3 px-4 text-center">' + fotoCol + '</td>';
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function openModalMonitoring() {
+      var modal = document.getElementById('modalMonitoring');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+
+      // Populate select mitra
+      var sel = document.getElementById('monitoringInputMitra');
+      if (sel) {
+        sel.innerHTML = '<option value="">Pilih Perusahaan Mitra</option>';
+        AppState.cache.mitra.forEach(function(m) {
+          sel.innerHTML += '<option value="' + m.id + '">' + escapeHtml(m.nama) + ' (' + escapeHtml(m.kode) + ')</option>';
+        });
+      }
+
+      var form = document.getElementById('formMonitoring');
+      if (form) form.reset();
+      clearMonitoringPhoto();
+      detectMonitoringGPS();
+    }
+
+    function closeModalMonitoring() {
+      if (MonitoringState.stream) {
+        MonitoringState.stream.getTracks().forEach(function(t) { t.stop(); });
+        MonitoringState.stream = null;
+      }
+      var cameraBox = document.getElementById('monitoringCameraContainer');
+      if (cameraBox) cameraBox.classList.add('hidden');
+      var modal = document.getElementById('modalMonitoring');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function detectMonitoringGPS() {
+      var infoText = document.getElementById('monitoringGpsInfoText');
+      var radText = document.getElementById('monitoringGpsRadiusResult');
+      var box = document.getElementById('monitoringGpsStatusBox');
+
+      if (!infoText || !radText || !box) return;
+      infoText.textContent = 'Mendeteksi titik koordinat perangkat Anda via GPS...';
+      radText.textContent = '-';
+
+      if (!navigator.geolocation) {
+        infoText.textContent = 'GPS tidak didukung oleh browser Anda.';
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(function(pos) {
+        MonitoringState.gpsCoords.lat = pos.coords.latitude;
+        MonitoringState.gpsCoords.lng = pos.coords.longitude;
+        infoText.textContent = 'Koordinat GPS terkunci: ' + pos.coords.latitude.toFixed(5) + ', ' + pos.coords.longitude.toFixed(5);
+        checkMonitoringGeofence();
+      }, function(err) {
+        infoText.textContent = 'Gagal mendeteksi GPS: ' + err.message + '. Pastikan Lokasi HP aktif!';
+        box.className = 'p-3 rounded-xl border border-rose-200 bg-rose-50 space-y-1';
+      }, { enableHighAccuracy: true, timeout: 10000 });
+    }
+
+    function checkMonitoringGeofence() {
+      var mId = document.getElementById('monitoringInputMitra') ? document.getElementById('monitoringInputMitra').value : '';
+      var box = document.getElementById('monitoringGpsStatusBox');
+      var radText = document.getElementById('monitoringGpsRadiusResult');
+      if (!radText || !box) return;
+
+      if (!mId || !MonitoringState.gpsCoords.lat) {
+        radText.textContent = 'Pilih mitra untuk memverifikasi radius lokasi.';
+        return;
+      }
+
+      var targetMitra = AppState.cache.mitra.find(function(m) { return m.id === mId; });
+      if (!targetMitra || !targetMitra.latitude || !targetMitra.longitude) {
+        radText.textContent = 'Mitra ini belum memiliki titik koordinat GPS tersimpan.';
+        return;
+      }
+
+      var dist = calculateHaversineMeters(
+        MonitoringState.gpsCoords.lat, MonitoringState.gpsCoords.lng,
+        parseFloat(targetMitra.latitude), parseFloat(targetMitra.longitude)
+      );
+      MonitoringState.distanceToMitra = Math.round(dist);
+      var allowedRadius = targetMitra.radiusMeter || 200;
+
+      if (dist <= allowedRadius) {
+        MonitoringState.isGpsValid = true;
+        box.className = 'p-3 rounded-xl border border-emerald-200 bg-emerald-50 space-y-1';
+        radText.innerHTML = '<span class="text-emerald-700 font-bold">✅ Berada di Lokasi Mitra (Jarak: ' + Math.round(dist) + ' meter &le; Max: ' + allowedRadius + 'm)</span>';
+      } else {
+        MonitoringState.isGpsValid = false;
+        box.className = 'p-3 rounded-xl border border-amber-200 bg-amber-50 space-y-1';
+        radText.innerHTML = '<span class="text-amber-700 font-bold">⚠️ Di Luar Radius Lokasi Mitra (Jarak: ' + Math.round(dist) + ' meter / Max: ' + allowedRadius + 'm)</span>';
+      }
+    }
+
+    function triggerMonitoringCamera() {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        showToast('Browser tidak mendukung live camera.', 'error');
+        return;
+      }
+      var cameraBox = document.getElementById('monitoringCameraContainer');
+      var video = document.getElementById('monitoringVideoFeed');
+
+      navigator.mediaDevices.getUserMedia({
+        video: { facingMode: 'environment', width: { ideal: 640 }, height: { ideal: 480 } },
+        audio: false
+      }).then(function(stream) {
+        MonitoringState.stream = stream;
+        video.srcObject = stream;
+        cameraBox.classList.remove('hidden');
+      }).catch(function(err) {
+        showToast('Gagal membuka kamera: ' + err.message, 'error');
+      });
+    }
+
+    function takeMonitoringSnapshot() {
+      var video = document.getElementById('monitoringVideoFeed');
+      var canvas = document.createElement('canvas');
+      canvas.width = 480;
+      canvas.height = 360;
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      var b64 = canvas.toDataURL('image/jpeg', 0.65);
+      setMonitoringPhotoPreview(b64);
+
+      if (MonitoringState.stream) {
+        MonitoringState.stream.getTracks().forEach(function(t) { t.stop(); });
+        MonitoringState.stream = null;
+      }
+      document.getElementById('monitoringCameraContainer').classList.add('hidden');
+    }
+
+    function previewMonitoringFile(e) {
+      var file = e.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function(evt) {
+        setMonitoringPhotoPreview(evt.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function setMonitoringPhotoPreview(dataUrl) {
+      MonitoringState.photoBase64 = dataUrl;
+      var previewBox = document.getElementById('monitoringPhotoPreviewBox');
+      var previewImg = document.getElementById('monitoringPreviewImg');
+      if (previewImg) previewImg.src = dataUrl;
+      if (previewBox) previewBox.classList.remove('hidden');
+    }
+
+    function clearMonitoringPhoto() {
+      MonitoringState.photoBase64 = null;
+      var previewBox = document.getElementById('monitoringPhotoPreviewBox');
+      var previewImg = document.getElementById('monitoringPreviewImg');
+      if (previewBox) previewBox.classList.add('hidden');
+      if (previewImg) previewImg.src = '';
+      var fileInp = document.getElementById('monitoringInputFotoFile');
+      if (fileInp) fileInp.value = '';
+    }
+
+    function previewMonitoringModalImage(src) {
+      var overlay = document.createElement('div');
+      overlay.className = 'fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-pointer';
+      overlay.onclick = function() { overlay.remove(); };
+      overlay.innerHTML = '<div class="relative max-w-lg w-full bg-white rounded-2xl overflow-hidden p-2 shadow-2xl">' +
+        '<img src="' + src + '" class="w-full h-auto rounded-xl max-h-[80vh] object-contain">' +
+        '<p class="text-center text-xs font-semibold text-slate-500 py-2">Klik di mana saja untuk menutup</p>' +
+        '</div>';
+      document.body.appendChild(overlay);
+    }
+
+    function handleSaveMonitoring(e) {
+      e.preventDefault();
+      var btn = document.getElementById('btnSubmitMonitoring');
+      btn.disabled = true;
+      btn.textContent = 'Menyimpan Absen Monitoring...';
+
+      var mId = document.getElementById('monitoringInputMitra').value;
+      var targetM = AppState.cache.mitra.find(function(m) { return m.id === mId; });
+      var catatan = document.getElementById('monitoringInputCatatan').value.trim();
+
+      var user = AppState.currentUser || {};
+      var statusLokText = MonitoringState.isGpsValid ? 'Valid Sesuai Radius' : (MonitoringState.distanceToMitra ? ('Di Luar Radius (' + MonitoringState.distanceToMitra + 'm)') : 'GPS Tidak Terdeteksi');
+
+      var payload = {
+        tanggal: getTodayDateString(),
+        idPembimbing: user.id || 'USR-202611-002',
+        namaPembimbing: user.nama || 'Drs. Hendro Wibowo, M.Pd.',
+        idMitra: mId,
+        namaMitra: targetM ? targetM.nama : '',
+        catatanMonitoring: catatan,
+        fotoKunjungan: MonitoringState.photoBase64 || '',
+        latitude: MonitoringState.gpsCoords.lat || 0,
+        longitude: MonitoringState.gpsCoords.lng || 0,
+        jarakMeter: MonitoringState.distanceToMitra || 0,
+        statusLokasi: statusLokText
+      };
+
+      callBackendApi('submitMonitoring', payload, function(res) {
+        btn.disabled = false;
+        btn.textContent = 'Simpan Absen Monitoring';
+        if (res.success) {
+          showToast(res.message, 'success');
+          closeModalMonitoring();
+          loadMonitoringData();
+        } else {
+          showToast(res.message, 'error');
+        }
+      }, function(err) {
+        btn.disabled = false;
+        btn.textContent = 'Simpan Absen Monitoring';
+        showToast('Gagal simpan monitoring: ' + err, 'error');
+      });
+    }
+
+    function exportMonitoringToExcel() {
+      var exportData = [
+        ['ID Log', 'Tanggal', 'Guru Pembimbing', 'Mitra Industri', 'Verifikasi GPS', 'Jarak (Meter)', 'Catatan Supervisi', 'Waktu Kirim']
+      ];
+      var list = AppState.cache.monitoring || [];
+      list.forEach(function(m) {
+        exportData.push([
+          m.id, m.tanggal, m.namaPembimbing, m.namaMitra, m.statusLokasi || '-', m.jarak || 0, m.catatan || '-', m.createdAt || '-'
+        ]);
+      });
+      var wb = XLSX.utils.book_new();
+      var ws = XLSX.utils.aoa_to_sheet(exportData);
+      XLSX.utils.book_append_sheet(wb, ws, 'LogMonitoring');
+      XLSX.writeFile(wb, 'SIM_PKL_SMEKNERO_Log_Monitoring_' + getTodayDateString() + '.xlsx');
+      showToast('Log Monitoring berhasil diekspor ke Excel!', 'success');
+    }
+
+    // ------------------------------------------------------------------------
+    // FITUR PENGAJUAN IZIN & SAKIT SERTA VERIFIKASI PEMBIMBING (REV-202611-006)
+    // ------------------------------------------------------------------------
+    var IzinState = {
+      photoBase64: null,
+      activeReviewId: null
+    };
+
+    function initIzinFormDates() {
+      var tglMulai = document.getElementById('izinInputTglMulai');
+      var tglSelesai = document.getElementById('izinInputTglSelesai');
+      if (tglMulai && !tglMulai.value) tglMulai.value = getTodayDateString();
+      if (tglSelesai && !tglSelesai.value) tglSelesai.value = getTodayDateString();
+    }
+
+    function previewIzinFile(e) {
+      var file = e.target.files[0];
+      if (!file) return;
+
+      if (file.size > 2 * 1024 * 1024) {
+        showToast('Ukuran berkas maksimal 2MB!', 'warning');
+        e.target.value = '';
+        return;
+      }
+
+      var reader = new FileReader();
+      reader.onload = function(evt) {
+        IzinState.photoBase64 = evt.target.result;
+        var previewBox = document.getElementById('izinPhotoPreviewBox');
+        var previewImg = document.getElementById('izinPreviewImg');
+        if (previewImg) previewImg.src = evt.target.result;
+        if (previewBox) previewBox.classList.remove('hidden');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearIzinPhoto() {
+      IzinState.photoBase64 = null;
+      var fileInput = document.getElementById('izinInputFotoFile');
+      if (fileInput) fileInput.value = '';
+      var previewBox = document.getElementById('izinPhotoPreviewBox');
+      if (previewBox) previewBox.classList.add('hidden');
+    }
+
+    function handleSavePengajuanIzin(e) {
+      e.preventDefault();
+      var jenisEl = document.querySelector('input[name="jenisIzinRadio"]:checked');
+      var jenis = jenisEl ? jenisEl.value : 'Izin';
+      var tglMulai = document.getElementById('izinInputTglMulai').value;
+      var tglSelesai = document.getElementById('izinInputTglSelesai').value;
+      var alasan = document.getElementById('izinInputAlasan').value.trim();
+
+      if (!tglMulai || !tglSelesai) {
+        showToast('Tentukan rentang tanggal izin / sakit.', 'warning');
+        return;
+      }
+      if (tglMulai > tglSelesai) {
+        showToast('Tanggal mulai tidak boleh lebih besar dari tanggal selesai!', 'error');
+        return;
+      }
+      if (!alasan) {
+        showToast('Tuliskan alasan lengkap permohonan izin/sakit Anda.', 'warning');
+        return;
+      }
+      if (!IzinState.photoBase64) {
+        showToast('Wajib mengunggah foto bukti resmi (Surat Dokter / Surat Izin Ortu)!', 'warning');
+        return;
+      }
+
+      var btn = document.getElementById('btnSubmitPengajuanIzin');
+      btn.disabled = true;
+      btn.textContent = 'Mengirim Permohonan...';
+
+      var user = AppState.currentUser || {};
+      var s = AppState.cache.siswa.find(function(x) { return x.nis === user.nis; }) || {};
+
+      var payload = {
+        tanggalPengajuan: getTodayDateString(),
+        nis: user.nis || '20241001',
+        namaSiswa: user.nama || s.nama || 'Siswa',
+        kelas: s.kelas || 'XII RPL 1',
+        jurusan: s.jurusan || 'Rekayasa Perangkat Lunak',
+        idMitra: s.idMitra || '',
+        namaMitra: s.namaMitra || '-',
+        idPembimbing: s.idPembimbing || '',
+        namaPembimbing: s.namaPembimbing || '-',
+        jenisPengajuan: jenis,
+        tglMulai: tglMulai,
+        tglSelesai: tglSelesai,
+        alasan: alasan,
+        fotoBukti: IzinState.photoBase64
+      };
+
+      callBackendApi('submitPengajuanIzin', payload, function(res) {
+        btn.disabled = false;
+        btn.textContent = 'Kirim Permohonan Izin / Sakit';
+        if (res.success) {
+          showToast(res.message || 'Permohonan berhasil dikirim ke Guru Pembimbing!', 'success');
+          document.getElementById('formPengajuanIzin').reset();
+          clearIzinPhoto();
+          initIzinFormDates();
+          loadPengajuanIzinData();
+        } else {
+          showToast(res.message || 'Gagal mengirim pengajuan.', 'error');
+        }
+      }, function(err) {
+        btn.disabled = false;
+        btn.textContent = 'Kirim Permohonan Izin / Sakit';
+        showToast('Koneksi server gagal: ' + err, 'error');
+      });
+    }
+
+    function loadPengajuanIzinData() {
+      var role = AppState.currentUser ? AppState.currentUser.role : 'Admin';
+      var payload = {
+        role: role,
+        userId: AppState.currentUser ? AppState.currentUser.id : '',
+        nis: AppState.currentUser ? AppState.currentUser.nis : ''
+      };
+
+      callBackendApi('getPengajuanIzinList', payload, function(res) {
+        if (res.success && res.data) {
+          AppState.cache.izin = res.data;
+          syncLocalMockStorage();
+          if (role === 'Siswa') {
+            renderSiswaRiwayatIzin();
+          } else {
+            renderPengajuanIzinTable();
+          }
+        }
+      });
+    }
+
+    function renderSiswaRiwayatIzin() {
+      var container = document.getElementById('listRiwayatIzinSiswa');
+      if (!container) return;
+      container.innerHTML = '';
+
+      var userNis = AppState.currentUser ? AppState.currentUser.nis : '20241001';
+      var list = (AppState.cache.izin || []).filter(function(x) { return x.nis === userNis; });
+
+      if (list.length === 0) {
+        container.innerHTML = '<p class="text-xs text-slate-400 italic text-center py-4">Belum ada riwayat permohonan izin atau sakit.</p>';
+        return;
+      }
+
+      list.forEach(function(item) {
+        var card = document.createElement('div');
+        card.className = 'p-3 bg-white rounded-xl border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs';
+
+        var badgeStatus = '';
+        if (item.status === 'Disetujui') {
+          badgeStatus = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Disetujui</span>';
+        } else if (item.status === 'Ditolak') {
+          badgeStatus = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">Ditolak (Alpa)</span>';
+        } else {
+          badgeStatus = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">Menunggu Review</span>';
+        }
+
+        var jenisBadge = item.jenisPengajuan === 'Sakit' ?
+          '<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-rose-50 text-rose-600">Sakit</span>' :
+          '<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-50 text-blue-600">Izin</span>';
+
+        card.innerHTML = '<div>' +
+          '<div class="flex items-center gap-2 mb-1">' +
+          jenisBadge +
+          '<span class="font-bold text-slate-800">' + (item.tglMulai === item.tglSelesai ? item.tglMulai : (item.tglMulai + ' s.d ' + item.tglSelesai)) + '</span>' +
+          '</div>' +
+          '<p class="text-slate-600 line-clamp-1">' + escapeHtml(item.alasan) + '</p>' +
+          (item.catatanPembimbing ? '<p class="text-[10px] text-indigo-600 mt-1 font-medium">Catatan Pembimbing: ' + escapeHtml(item.catatanPembimbing) + '</p>' : '') +
+          '</div>' +
+          '<div class="flex items-center gap-2 shrink-0">' +
+          (item.fotoBukti ? '<button type="button" onclick="previewIzinBuktiModal(\'' + item.fotoBukti + '\')" class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-[10px] font-semibold transition">Lihat Bukti</button>' : '') +
+          badgeStatus +
+          '</div>';
+
+        container.appendChild(card);
+      });
+    }
+
+    function renderPengajuanIzinTable() {
+      var tbody = document.getElementById('tableIzinBody');
+      var emptyEl = document.getElementById('tableIzinEmpty');
+      var filterStatus = document.getElementById('filterStatusIzinSelect') ? document.getElementById('filterStatusIzinSelect').value : '';
+
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      var list = AppState.cache.izin || [];
+
+      if (AppState.currentUser && AppState.currentUser.role === 'Pembimbing') {
+        list = list.filter(function(x) { return x.idPembimbing === AppState.currentUser.id; });
+      }
+
+      var totalCount = list.length;
+      var waitCount = list.filter(function(x) { return x.status === 'Menunggu'; }).length;
+      var accCount = list.filter(function(x) { return x.status === 'Disetujui'; }).length;
+      var rejCount = list.filter(function(x) { return x.status === 'Ditolak'; }).length;
+
+      var stTotal = document.getElementById('statTotalIzin');
+      var stWait = document.getElementById('statMenungguIzin');
+      var stAcc = document.getElementById('statDisetujuiIzin');
+      var stRej = document.getElementById('statDitolakIzin');
+      if (stTotal) stTotal.textContent = totalCount;
+      if (stWait) stWait.textContent = waitCount;
+      if (stAcc) stAcc.textContent = accCount;
+      if (stRej) stRej.textContent = rejCount;
+
+      if (filterStatus) {
+        list = list.filter(function(x) { return x.status === filterStatus; });
+      }
+
+      if (list.length === 0) {
+        if (emptyEl) emptyEl.classList.remove('hidden');
+        return;
+      }
+      if (emptyEl) emptyEl.classList.add('hidden');
+
+      list.forEach(function(item) {
+        var tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 transition border-b border-slate-100';
+
+        var badgeStatus = '';
+        if (item.status === 'Disetujui') {
+          badgeStatus = '<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Disetujui</span>';
+        } else if (item.status === 'Ditolak') {
+          badgeStatus = '<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">Ditolak (Alpa)</span>';
+        } else {
+          badgeStatus = '<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">Menunggu Review</span>';
+        }
+
+        var jenisBadge = item.jenisPengajuan === 'Sakit' ?
+          '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-rose-50 text-rose-600 border border-rose-100">Sakit</span>' :
+          '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600 border border-blue-100">Izin</span>';
+
+        var rentang = item.tglMulai === item.tglSelesai ? item.tglMulai : (item.tglMulai + ' s.d ' + item.tglSelesai);
+
+        var actionBtn = '<button onclick="openModalReviewIzin(\'' + item.id + '\')" class="px-3 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold rounded-lg text-xs transition inline-flex items-center gap-1.5">' +
+          '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>' +
+          (item.status === 'Menunggu' ? 'Review' : 'Detail') +
+          '</button>';
+
+        tr.innerHTML = '<td class="py-3 px-4 font-semibold text-slate-800">' +
+          '<p>' + escapeHtml(item.tanggalPengajuan || '-') + '</p>' +
+          '<span class="text-[10px] text-slate-400 font-mono">ID: ' + item.id + '</span>' +
+          '</td>' +
+          '<td class="py-3 px-3">' +
+          '<p class="font-bold text-slate-900">' + escapeHtml(item.namaSiswa || '-') + '</p>' +
+          '<p class="text-[10px] text-slate-500">NIS: ' + (item.nis || '-') + ' &bull; ' + escapeHtml(item.kelas || '-') + '</p>' +
+          '</td>' +
+          '<td class="py-3 px-3">' + jenisBadge + '</td>' +
+          '<td class="py-3 px-3 font-semibold text-slate-800">' + rentang + '</td>' +
+          '<td class="py-3 px-3 text-slate-600 max-w-xs">' +
+          '<p class="line-clamp-2 text-[11px]">' + escapeHtml(item.alasan || '-') + '</p>' +
+          '</td>' +
+          '<td class="py-3 px-3 text-center">' + badgeStatus + '</td>' +
+          '<td class="py-3 px-4 text-center">' + actionBtn + '</td>';
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function openModalReviewIzin(id) {
+      var item = (AppState.cache.izin || []).find(function(x) { return x.id === id; });
+      if (!item) return;
+
+      IzinState.activeReviewId = id;
+      var modal = document.getElementById('modalReviewIzin');
+      if (!modal) return;
+
+      document.getElementById('reviewIzinNamaSiswa').textContent = item.namaSiswa + ' (' + item.nis + ') - ' + (item.kelas || '');
+      document.getElementById('reviewIzinMitra').textContent = 'Mitra: ' + (item.namaMitra || '-') + ' | Pembimbing: ' + (item.namaPembimbing || '-');
+      document.getElementById('reviewIzinJenisBadge').textContent = item.jenisPengajuan;
+      document.getElementById('reviewIzinJenisBadge').className = item.jenisPengajuan === 'Sakit' ?
+        'px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200' :
+        'px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200';
+
+      var rentang = item.tglMulai === item.tglSelesai ? item.tglMulai : (item.tglMulai + ' s.d ' + item.tglSelesai);
+      document.getElementById('reviewIzinRentang').textContent = rentang;
+      document.getElementById('reviewIzinAlasan').textContent = item.alasan || '-';
+      document.getElementById('reviewIzinCatatanInput').value = item.catatanPembimbing || '';
+
+      var fotoBox = document.getElementById('reviewIzinFotoContainer');
+      if (item.fotoBukti) {
+        fotoBox.innerHTML = '<img src="' + item.fotoBukti + '" class="w-full max-h-72 object-contain rounded-xl border border-slate-200 bg-black/5 cursor-pointer" onclick="previewIzinBuktiModal(\'' + item.fotoBukti + '\')"><p class="text-[10px] text-slate-400 mt-1">Klik gambar untuk melihat ukuran penuh</p>';
+      } else {
+        fotoBox.innerHTML = '<p class="text-xs text-slate-400 italic">Tidak ada foto bukti.</p>';
+      }
+
+      var actionBox = document.getElementById('reviewIzinActionButtons');
+      var isMenunggu = item.status === 'Menunggu';
+      if (actionBox) {
+        actionBox.style.display = isMenunggu ? 'flex' : 'none';
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeModalReviewIzin() {
+      var modal = document.getElementById('modalReviewIzin');
+      if (modal) modal.classList.add('hidden');
+      IzinState.activeReviewId = null;
+    }
+
+    function executeVerifyIzin(status) {
+      if (!IzinState.activeReviewId) return;
+      var catatan = document.getElementById('reviewIzinCatatanInput').value.trim();
+
+      var confirmMsg = (status === 'Disetujui') ? 
+        'Setujui permohonan izin/sakit ini? Kehadiran siswa akan tercatat resmi sebagai ' + (status) + '.' :
+        'Tolak permohonan izin ini? Siswa akan otomatis tercatat sebagai ALPA pada rentang tanggal tersebut!';
+
+      if (!confirm(confirmMsg)) return;
+
+      var btnTolak = document.getElementById('btnReviewTolak');
+      var btnSetuju = document.getElementById('btnReviewSetuju');
+      if (btnTolak) btnTolak.disabled = true;
+      if (btnSetuju) btnSetuju.disabled = true;
+
+      callBackendApi('verifyPengajuanIzin', {
+        id: IzinState.activeReviewId,
+        status: status,
+        catatanPembimbing: catatan
+      }, function(res) {
+        if (btnTolak) btnTolak.disabled = false;
+        if (btnSetuju) btnSetuju.disabled = false;
+        if (res.success) {
+          showToast(res.message || 'Verifikasi izin berhasil disimpan!', 'success');
+          closeModalReviewIzin();
+          loadPengajuanIzinData();
+          loadRekapData();
+        } else {
+          showToast(res.message || 'Gagal memverifikasi izin.', 'error');
+        }
+      }, function(err) {
+        if (btnTolak) btnTolak.disabled = false;
+        if (btnSetuju) btnSetuju.disabled = false;
+        showToast('Koneksi server gagal: ' + err, 'error');
+      });
+    }
+
+    function previewIzinBuktiModal(src) {
+      if (!src) return;
+      var overlay = document.createElement('div');
+      overlay.className = 'fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4';
+      overlay.onclick = function() { overlay.remove(); };
+      overlay.innerHTML = '<div class="relative max-w-xl w-full bg-white rounded-2xl overflow-hidden p-3 shadow-2xl">' +
+        '<div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">' +
+        '<span class="text-xs font-bold text-slate-800">Berkas Bukti Izin / Sakit Resmi</span>' +
+        '<button type="button" class="text-slate-400 hover:text-slate-700 font-bold">&times;</button>' +
+        '</div>' +
+        '<img src="' + src + '" class="w-full h-auto rounded-xl max-h-[75vh] object-contain">' +
+        '<p class="text-center text-[11px] text-slate-400 pt-2">Klik di mana saja untuk menutup</p>' +
+        '</div>';
+      document.body.appendChild(overlay);
+    }
+
+    // ------------------------------------------------------------------------
     // IMPORT & EXPORT EXCEL & PDF SISWA
     // ------------------------------------------------------------------------
     function handleExcelImport(e) {
@@ -2828,11 +4046,11 @@
 
     function exportSiswaToExcel() {
       var exportData = [
-        ['NIS', 'NISN', 'Nama Lengkap', 'Jenis Kelamin', 'Kelas', 'Jurusan', 'Mitra Industri', 'Guru Pembimbing', 'Status Wajah']
+        ['NIS', 'NISN', 'Nama Lengkap', 'Jenis Kelamin', 'Kelas', 'Jurusan', 'Mitra Industri', 'Guru Pembimbing', 'Status Wajah', 'Tgl Mulai PKL', 'Tgl Selesai PKL', 'Status PKL']
       ];
       AppState.cache.siswa.forEach(function(s) {
         exportData.push([
-          s.nis, s.nisn, s.nama, s.jk, s.kelas, s.jurusan, s.namaMitra || '-', s.namaPembimbing || '-', s.statusWajah
+          s.nis, s.nisn, s.nama, s.jk, s.kelas, s.jurusan, s.namaMitra || '-', s.namaPembimbing || '-', s.statusWajah, s.tglMulaiPKL || '2026-07-01', s.tglSelesaiPKL || '2026-12-31', s.statusPKL || 'Sedang PKL'
         ]);
       });
       var wb = XLSX.utils.book_new();
@@ -3049,12 +4267,17 @@
           syncLocalMockStorage();
           onSuccess({ success: true, message: 'Perusahaan mitra berhasil dihapus!' });
         } else if (action === 'getRekapAbsensi') {
+          var basisHari = payload.basisHariKerja || 'auto';
           var targetList = AppState.cache.siswa.filter(function(s) {
             var matchP = !payload.idPembimbing || s.idPembimbing === payload.idPembimbing;
             var matchM = !payload.idMitra || s.idMitra === payload.idMitra;
             return matchP && matchM;
           });
           var rekap = targetList.map(function(s) {
+            var targetMitra = AppState.cache.mitra.find(function(m) { return m.id === s.idMitra; });
+            var mitraHariKerja = targetMitra ? (targetMitra.sistemHariKerja || '6 Hari (Senin-Sabtu)') : '6 Hari (Senin-Sabtu)';
+            var effectiveBasis = basisHari === 'auto' ? (mitraHariKerja.includes('7') ? 7 : (mitraHariKerja.includes('5') ? 5 : 6)) : parseInt(basisHari, 10);
+
             var log = AppState.cache.absensi.filter(function(a) { return a.nis === s.nis; });
             var h = log.filter(function(a) { return a.statusMasuk === 'Hadir'; }).length;
             var t = log.filter(function(a) { return a.statusMasuk === 'Terlambat'; }).length;
@@ -3065,7 +4288,7 @@
             var persen = total > 0 ? Math.round(((h + t) / total) * 100) : 0;
             return {
               nis: s.nis, nama: s.nama, kelas: s.kelas, mitra: s.namaMitra || '-',
-              pembimbing: s.namaPembimbing || '-', hadir: h, terlambat: t, izin: i, sakit: sk, alpa: alpa, persenKehadiran: persen
+              pembimbing: s.namaPembimbing || '-', sistemKerja: effectiveBasis + ' Hari', hadir: h, terlambat: t, izin: i, sakit: sk, alpa: alpa, persenKehadiran: persen
             };
           });
           var sum = { hadir: 0, terlambat: 0, izin: 0, sakit: 0, alpa: 0 };
@@ -3073,6 +4296,72 @@
             sum.hadir += r.hadir; sum.terlambat += r.terlambat; sum.izin += r.izin; sum.sakit += r.sakit; sum.alpa += r.alpa;
           });
           onSuccess({ success: true, data: { rekap: rekap, summary: sum } });
+        } else if (action === 'getMonitoringList') {
+          var mList = AppState.cache.monitoring || [];
+          if (payload.role === 'Pembimbing' && payload.idPembimbing) {
+            mList = mList.filter(function(m) { return m.idPembimbing === payload.idPembimbing; });
+          }
+          onSuccess({ success: true, data: mList });
+        } else if (action === 'submitMonitoring') {
+          payload.id = 'MON-' + Date.now();
+          payload.createdAt = getFormattedIndonesianDate();
+          if (!AppState.cache.monitoring) AppState.cache.monitoring = [];
+          AppState.cache.monitoring.unshift(payload);
+          syncLocalMockStorage();
+          onSuccess({ success: true, message: 'Absensi Kunjungan Monitoring Pembimbing Berhasil Dicatat!' });
+        } else if (action === 'submitPengajuanIzin') {
+          payload.id = 'IZN-' + Date.now();
+          payload.status = 'Menunggu';
+          payload.createdAt = getFormattedIndonesianDate();
+          if (!AppState.cache.izin) AppState.cache.izin = [];
+          AppState.cache.izin.unshift(payload);
+          syncLocalMockStorage();
+          onSuccess({ success: true, message: 'Permohonan izin / sakit berhasil dikirim ke Guru Pembimbing!' });
+        } else if (action === 'getPengajuanIzinList') {
+          var izList = AppState.cache.izin || [];
+          if (payload.role === 'Siswa' && payload.nis) {
+            izList = izList.filter(function(x) { return x.nis === payload.nis; });
+          } else if (payload.role === 'Pembimbing' && payload.userId) {
+            izList = izList.filter(function(x) { return x.idPembimbing === payload.userId; });
+          }
+          onSuccess({ success: true, data: izList });
+        } else if (action === 'verifyPengajuanIzin') {
+          var targetIzin = (AppState.cache.izin || []).find(function(x) { return x.id === payload.id; });
+          if (targetIzin) {
+            targetIzin.status = payload.status;
+            targetIzin.catatanPembimbing = payload.catatanPembimbing || '';
+            targetIzin.tanggalVerifikasi = getTodayDateString();
+
+            // Otomatis sinkronisasi ke LogAbsensi jika Disetujui
+            if (payload.status === 'Disetujui') {
+              var tAwal = new Date(targetIzin.tglMulai);
+              var tAkhir = new Date(targetIzin.tglSelesai);
+              var cur = new Date(tAwal);
+              while (cur <= tAkhir) {
+                var dStr = formatDateIso(cur);
+                var existingAbs = AppState.cache.absensi.find(function(a) { return a.nis === targetIzin.nis && a.tanggal === dStr; });
+                var statusEntry = targetIzin.jenisPengajuan === 'Sakit' ? 'Sakit' : 'Izin';
+                if (existingAbs) {
+                  existingAbs.statusMasuk = statusEntry;
+                  existingAbs.catatan = 'Izin/Sakit Disetujui: ' + targetIzin.alasan;
+                } else {
+                  AppState.cache.absensi.unshift({
+                    id: 'ABS-' + Date.now() + '-' + Math.floor(Math.random() * 1000),
+                    tanggal: dStr,
+                    nis: targetIzin.nis,
+                    nama: targetIzin.namaSiswa,
+                    jamMasuk: '07:00:00',
+                    statusMasuk: statusEntry,
+                    jarakMasuk: 0,
+                    catatan: 'Izin/Sakit Disetujui: ' + targetIzin.alasan
+                  });
+                }
+                cur.setDate(cur.getDate() + 1);
+              }
+            }
+            syncLocalMockStorage();
+          }
+          onSuccess({ success: true, message: 'Status pengajuan berhasil diperbarui menjadi: ' + payload.status });
         } else if (action === 'getJurnalList') {
           onSuccess({ success: true, data: AppState.cache.jurnal });
         } else if (action === 'submitJurnal') {
@@ -3174,5 +4463,3 @@
   </script>
 </body>
 </html>
-
-
